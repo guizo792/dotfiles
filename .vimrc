@@ -15,7 +15,14 @@ nnoremap <C-k> <C-w>k
 
 set hidden
 set tabstop=4 shiftwidth=4 expandtab
-set clipboard=unnamedplus
+
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
+
+" set clipboard=unnamedplus
 set autochdir
 
 " Optional keybinding to search
